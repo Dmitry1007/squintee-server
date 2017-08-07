@@ -36,7 +36,7 @@ let getBaseUrl = () => {
     if (isDevelopment) {
         return 'http://localhost:3000';
     } else {
-        return 'https://s3.console.aws.amazon.com/s3/buckets/squintee/'
+        return 'https://s3.console.aws.amazon.com/s3/buckets/squintee'
         // return 'http://eatodo.s3.amazonaws.com'
     }
 }
