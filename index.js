@@ -5,7 +5,7 @@ const app = express();
 const request = require('request');
 const isDevelopment = process.env.NODE_ENV === 'development';
 
-var version;
+var version = "0.0.2";
 // Fetch manifest info every 5 minutes
 const FETCH_INTERVAL = 300000;
 
