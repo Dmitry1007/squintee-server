@@ -5,7 +5,7 @@ const app = express();
 const request = require('request');
 const isDevelopment = process.env.NODE_ENV === 'development';
 
-var version = '0.0.3';
+var version = '0.0.4';
 // Fetch manifest info every 5 minutes
 const FETCH_INTERVAL = 300000;
 
@@ -20,11 +20,11 @@ app.get('/updates/latest', (req, res) => {
         const clientVersion = req.query.v;
         console.log("Electron Application Version", clientVersion)
 
-        if (clientVersion === '0.0.3') {
+        if (clientVersion === '0.0.4') {
             res.status(204).end();
         } else {
             res.json({
-                url: `${getBaseUrl()}/updates/latest/osx/eatodo-${'0.0.3'}-mac.zip`
+                url: `${getBaseUrl()}/updates/latest/osx/eatodo-${'0.0.4'}-mac.zip`
             });
         }
     }
