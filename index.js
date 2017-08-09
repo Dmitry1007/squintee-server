@@ -18,6 +18,7 @@ if (isDevelopment) {
 app.get('/updates/latest', (req, res) => {
     if (version) {
         const clientVersion = req.query.v;
+        console.log("Electron Application Version", clientVersion)
 
         if (clientVersion === '0.0.2') {
             res.status(204).end();
