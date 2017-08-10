@@ -18,15 +18,12 @@ if (isDevelopment) {
 app.get('/updates/latest', (req, res) => {
     if (version) {
         const clientVersion = req.query.v;
-        console.log("Electron Application Version", clientVersion)
 
         if (clientVersion === version) {
             res.status(204).end();
         } else {
             res.json({
                 url: `${getBaseUrl()}/updates/latest/osx/eatodo-${version}-mac.zip`
-                // Correct Path
-                // https://s3-us-west-2.amazonaws.com/squintee/updates/latest/osx/eatodo-0.0.4-mac.zip
             });
         }
     }
@@ -47,7 +44,9 @@ let getBaseUrl = () => {
 let getVersion = () => {
     request.get(versionUrl, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            version = body;
+            var versionText = body;
+            // remove newline character from version
+            version = versionText.replace(/(\r\n|\n|\r)/gm,"");
         }
         else if (error) {
             console.error(error);
