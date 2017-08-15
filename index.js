@@ -23,7 +23,7 @@ app.get('/updates/latest', (req, res) => {
             res.status(204).end();
         } else {
             res.json({
-                url: `${getBaseUrl()}/updates/latest/osx/eatodo-${version}-mac.zip`
+                url: `${getBaseUrl()}/updates/latest/osx/squintee-${version}-mac.zip`
             });
         }
     }
